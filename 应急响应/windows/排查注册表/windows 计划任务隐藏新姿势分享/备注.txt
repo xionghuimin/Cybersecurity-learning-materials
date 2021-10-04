@@ -1,0 +1,18 @@
+202109和7师傅在金圆控股应急的时候有遇到过这个问题，排查
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache
+这个注册表目录下的每一个条，
+一般是恶意的都是管理员（system）创建的，所以可以先看创建者，如果是管理员在点进action里看
+有试过导注册表，但是导出来的action是二进制的，除非写脚本，否则还是直接在注册表里看更方便
+
+也需要注意以下目录的排查
+开机自启
+注册表开机自启位置:
+HKLM\Software\Microsoft\Windows\CurrentVersion\Runonce
+HKLM\Software\Microsoft\Windows\CurrentVersion\policies\Explorer\Run
+HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+(ProfilePath)\Start Menu\Programs\Startups
+参考文章
+https://mp.weixin.qq.com/s/VeqWoE4RwmTu_fpFZ3lhYQ
